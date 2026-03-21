@@ -12,7 +12,7 @@
   <header>
     <div class="container header-container">
       <div class="logo">
-        <a href="index.html">Наш l Уклад</a>
+        <a href="index.html">Наш Уклад</a>
         <span>Касмічны ўклад Беларусі</span>
       </div>
       <div class="burger">
@@ -26,10 +26,10 @@
         <li><a href="achievements.html">Дасягненні</a></li>
       </ul>
     </div>
-  </header>
-
-  <main>
-    <div class="container">
+  </header> 
+	<body>
+		<main>
+			<div class="container">
       <section class="hero">
         <h1>Героический вклад белорусов в освоение космоса</h1>
         <p>От первых космонавтов до современных спутников — Беларусь всегда была частью звёздной истории человечества</p>
@@ -64,7 +64,7 @@
           
           <div class="card">
             <div class="card-img">
-              <img src="images/999.jpg" alt="Марина Василевская - первая женщина-космонавт Беларуси">
+              <img src="images/638.jpg" alt="Марина Василевская - первая женщина-космонавт Беларуси">
             </div>
             <div class="card-content">
               <h3>Марина Василевская</h3>
@@ -73,8 +73,34 @@
           </div>
         </div>
       </section>
+	  
+	  <div style="background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(0,0,0,0.3)); border-radius: 20px; padding: 1.5rem; text-align: center; margin: 2rem 0;">
+  <p style="font-size: 1.2rem; font-style: italic; margin-bottom: 0.5rem;" id="quoteText">"Зямля такая маленькая і такая прыгожая. Беражыце яе!"</p>
+  <p style="margin-top: 0.5rem; color: #ffd966;" id="quoteAuthor">— Пётр Климук, лётчик-космонавт</p>
+  <p style="font-size: 0.8rem; margin-top: 0.8rem;">✨ Цитата обновляется каждый день ✨</p>
+</div>
+
+<script>
+var quotes = [
+  { text: '"Зямля такая маленькая і такая прыгожая. Беражыце яе!"', author: '— Пётр Климук, лётчик-космонавт' },
+  { text: '"Космос — это не только романтика, это огромный труд и ответственность"', author: '— Владимир Коваленок, дважды Герой СССР' },
+  { text: '"С космоса наша планета кажется хрупкой. Мы должны её беречь"', author: '— Олег Новицкий, Герой РФ' },
+  { text: '"Як я марыла — так і здарылася. Галоўнае — верыць у сябе!"', author: '— Марина Василевская, Герой Беларуси' },
+  { text: '"Космос — это не работа, это образ жизни и состояние души"', author: '— Георгий Гречко, дважды Герой СССР' },
+  { text: '"Выход в открытый космос — момент, когда понимаешь, насколько человек мал и одновременно велик"', author: '— Анатолий Арцебарский, Герой СССР' },
+  { text: '"Беларусь — космическая держава. Наши технологии работают на орбите"', author: '— Александр Лукашенко, Президент Беларуси' },
+  { text: '"Первый шаг в космос сделал белорус. И мы гордимся этим"', author: '— Из выступления на церемонии встречи Марины Василевской' }
+];
+
+var today = new Date();
+var dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+var quoteIndex = dayOfYear % quotes.length;
+
+document.getElementById('quoteText').innerHTML = quotes[quoteIndex].text;
+document.getElementById('quoteAuthor').innerHTML = quotes[quoteIndex].author;
+</script>
       
-      <section style="margin-top: 4rem;">
+      <section style="margin-top: 2rem;">
   <h2 style="text-align: center; margin-bottom: 2rem;">🚀 Белорусские технологии, покорившие космос</h2>
   
   <div class="card-grid">
@@ -120,6 +146,13 @@
     </div>
   </div>
   
+<style>
+@keyframes flyRocket {
+  0% { left: -50px; }
+  100% { left: 100%; }
+}
+</style>
+  
   <div style="margin-top: 2rem; text-align: center;">
     <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
      🏆Беларусь входит в число мировых лидеров по производству космической микроэлектроники и оптики.  
@@ -129,6 +162,168 @@
 </section>
     </div>
   </main>
+  
+  <section style="background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(0,0,0,0.5)); border-radius: 30px; padding: 2rem; margin: 3rem 0;">
+  <h2 style="text-align: center; margin-bottom: 1rem;">⭐ Космическая викторина ⭐</h2>
+  <p style="text-align: center; margin-bottom: 2rem;">Проверь свои знания о белорусском космосе!</p>
+  
+  <div id="quizContainer">
+    <div id="quizQuestion" style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 20px; margin-bottom: 1rem;">
+      <p style="font-size: 1.2rem; font-weight: bold;" id="questionText">Загрузка...</p>
+    </div>
+    <div id="quizAnswers" style="display: flex; flex-direction: column; gap: 10px;">
+      <button class="quiz-btn" data-index="0">Ответ 1</button>
+      <button class="quiz-btn" data-index="1">Ответ 2</button>
+      <button class="quiz-btn" data-index="2">Ответ 3</button>
+      <button class="quiz-btn" data-index="3">Ответ 4</button>
+    </div>
+    <div id="quizResult" style="text-align: center; margin-top: 1rem; font-size: 1.1rem;"></div>
+    <div style="text-align: center; margin-top: 1rem;">
+      <button id="nextQuizBtn" style="background: #ffd966; border: none; padding: 10px 30px; border-radius: 30px; font-weight: bold; cursor: pointer; display: none;">Следующий вопрос →</button>
+    </div>
+  </div>
+</section>
+
+<style>
+.quiz-btn {
+  background: rgba(255,215,0,0.2);
+  border: 1px solid rgba(255,215,0,0.5);
+  padding: 12px 20px;
+  border-radius: 40px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+}
+.quiz-btn:hover {
+  background: rgba(255,215,0,0.4);
+  transform: translateX(5px);
+}
+.quiz-btn.correct {
+  background: #2e7d32;
+  border-color: #4caf50;
+}
+.quiz-btn.wrong {
+  background: #c62828;
+  border-color: #f44336;
+}
+.quiz-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+</style>
+
+<script>
+var quizQuestions = [
+  { question: "Кто был первым белорусским космонавтом?", answers: ["Владимир Коваленок", "Пётр Климук", "Олег Новицкий", "Марина Василевская"], correct: 1 },
+  { question: "В каком году был запущен первый белорусский спутник БКА?", answers: ["2010", "2012", "2015", "2020"], correct: 1 },
+  { question: "Сколько белорусских космонавтов совершили полёты в космос?", answers: ["2", "3", "4", "5"], correct: 2 },
+  { question: "Кто стал первой женщиной-космонавтом суверенной Беларуси?", answers: ["Светлана Савицкая", "Марина Василевская", "Елена Серова", "Анна Кикина"], correct: 1 },
+  { question: "Какое белорусское предприятие создаёт микросхемы для космической техники?", answers: ["МАЗ", "БелАЗ", "Интеграл", "Пеленг"], correct: 2 },
+  { question: "Сколько дней провёл в космосе Владимир Коваленок?", answers: ["78 суток", "140 суток", "216 суток", "500 суток"], correct: 2 },
+  { question: "Как назывался первый белорусский спутник?", answers: ["БКА", "БелКА", "Белорус-1", "Салют-Б"], correct: 0 },
+  { question: "Где родился Пётр Климук?", answers: ["Минск", "Гомель", "Брестская область", "Витебская область"], correct: 2 },
+  { question: "Какое разрешение снимков даёт спутник БКА?", answers: ["10 метров", "5 метров", "2 метра", "1 метр"], correct: 2 },
+  { question: "Сколько полётов совершил Пётр Климук?", answers: ["1", "2", "3", "4"], correct: 2 },
+  { question: "Какое предприятие создаёт оптику для космоса?", answers: ["Интеграл", "Пеленг", "Планар", "Агат"], correct: 1 },
+  { question: "В каком городе находится НПО «Интеграл»?", answers: ["Брест", "Гомель", "Минск", "Могилёв"], correct: 2 },
+  { question: "Кто установил рекорд по выходу в открытый космос среди белорусов?", answers: ["Пётр Климук", "Владимир Коваленок", "Олег Новицкий", "Анатолий Арцебарский"], correct: 3 },
+  { question: "Сколько выходов в открытый космос совершил Анатолий Арцебарский?", answers: ["2", "4", "6", "8"], correct: 2 },
+  { question: "Кто написал 28 книг о космосе?", answers: ["Пётр Климук", "Владимир Коваленок", "Георгий Гречко", "Олег Новицкий"], correct: 2 },
+  { question: "Кто из белорусских космонавтов снимался в фильме «Вызов» на МКС?", answers: ["Пётр Климук", "Владимир Коваленок", "Олег Новицкий", "Анатолий Арцебарский"], correct: 2 },
+  { question: "Что Владимир Коваленок вырастил в космосе впервые в мире?", answers: ["Картофель", "Пшеницу", "Гречку", "Цветы"], correct: 1 },
+  { question: "В каком городе есть Аллея Героев-космонавтов?", answers: ["Брест", "Гомель", "Минск", "Могилёв"], correct: 2 },
+  { question: "Какую награду от NASA получила Марина Василевская?", answers: ["Золотая Звезда", "Медаль За космический полёт", "Орден Мужества", "Космическая премия"], correct: 1 },
+  { question: "Сколько суток провёл в космосе Олег Новицкий?", answers: ["216", "134", "531", "78"], correct: 2 }
+];
+
+var currentQuestion = 0;
+var score = 0;
+var answered = false;
+
+function loadQuestion() {
+  answered = false;
+  var q = quizQuestions[currentQuestion];
+  document.getElementById('questionText').innerHTML = (currentQuestion + 1) + '. ' + q.question;
+  
+  var buttons = document.querySelectorAll('.quiz-btn');
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].innerHTML = q.answers[i];
+    buttons[i].disabled = false;
+    buttons[i].classList.remove('correct', 'wrong');
+  }
+  
+  document.getElementById('quizResult').innerHTML = '';
+  document.getElementById('nextQuizBtn').style.display = 'none';
+}
+
+function checkAnswer(selected) {
+  if (answered) return;
+  answered = true;
+  
+  var q = quizQuestions[currentQuestion];
+  var buttons = document.querySelectorAll('.quiz-btn');
+  
+  if (selected === q.correct) {
+    buttons[selected].classList.add('correct');
+    score++;
+    document.getElementById('quizResult').innerHTML = '✅ Правильно! +1 балл';
+    document.getElementById('quizResult').style.color = '#4caf50';
+  } else {
+    buttons[selected].classList.add('wrong');
+    buttons[q.correct].classList.add('correct');
+    document.getElementById('quizResult').innerHTML = '❌ Неправильно! Правильный ответ: ' + q.answers[q.correct];
+    document.getElementById('quizResult').style.color = '#ffd966';
+  }
+  
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].disabled = true;
+  }
+  
+  document.getElementById('nextQuizBtn').style.display = 'inline-block';
+}
+
+function nextQuestion() {
+  currentQuestion++;
+  if (currentQuestion < quizQuestions.length) {
+    loadQuestion();
+  } else {
+    var percent = Math.round((score / quizQuestions.length) * 100);
+    document.getElementById('quizQuestion').innerHTML = '<p style="font-size: 1.3rem; text-align: center;">🎉 Викторина завершена! 🎉</p><p style="text-align: center;">Ваш результат: ' + score + ' из ' + quizQuestions.length + ' (' + percent + '%)</p>';
+    document.getElementById('quizAnswers').style.display = 'none';
+    document.getElementById('nextQuizBtn').style.display = 'none';
+    document.getElementById('quizResult').innerHTML = '';
+    
+    var restartBtn = document.createElement('button');
+    restartBtn.innerHTML = '🔄 Пройти заново';
+    restartBtn.style.background = '#ffd966';
+    restartBtn.style.border = 'none';
+    restartBtn.style.padding = '10px 30px';
+    restartBtn.style.borderRadius = '30px';
+    restartBtn.style.fontWeight = 'bold';
+    restartBtn.style.cursor = 'pointer';
+    restartBtn.style.marginTop = '20px';
+    restartBtn.onclick = function() {
+      currentQuestion = 0;
+      score = 0;
+      document.getElementById('quizAnswers').style.display = 'flex';
+      document.getElementById('quizQuestion').innerHTML = '<p style="font-size: 1.2rem; font-weight: bold;" id="questionText">Загрузка...</p>';
+      loadQuestion();
+      this.remove();
+    };
+    document.getElementById('quizContainer').appendChild(restartBtn);
+  }
+}
+
+document.querySelectorAll('.quiz-btn').forEach(function(btn, idx) {
+  btn.addEventListener('click', function() {
+    checkAnswer(idx);
+  });
+});
+document.getElementById('nextQuizBtn').addEventListener('click', nextQuestion);
+loadQuestion();
+</script>
 
   <footer>
     <div class="container">
