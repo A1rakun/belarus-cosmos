@@ -164,7 +164,22 @@
         <p style="margin-top: 0.5rem;">— Александр Лукашенко, Президент Республики Беларусь</p>
       </div>
     </div>
-  </main>
+
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})" 
+        style="position: fixed; bottom: 20px; right: 20px; background: linear-gradient(135deg, #ffd966, #ffaa33); border: none; border-radius: 40px; padding: 8px 16px; display: flex; align-items: center; gap: 8px; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; transition: all 0.3s; font-weight: bold; color: #1a1a2e;"
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.4)'" 
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.3)'">
+  <span style="font-size: 20px; animation: rocketFly 0.8s infinite alternate;">🚀</span>
+  <span>Наверх</span>
+</button>
+
+<style>
+@keyframes rocketFly {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-4px); }
+}
+</style>
+	</main>
 
   <footer>
     <div class="container"><p>© 2026 Героический вклад белорусов в освоение космоса.</p></div>
@@ -173,4 +188,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+		
 		
