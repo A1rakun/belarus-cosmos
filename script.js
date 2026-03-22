@@ -91,33 +91,42 @@ document.addEventListener('click', function(e) {
     }, 500, particle);
   }
 });
-var cursorTrail = [];
-document.addEventListener('mousemove', function(e) {
-  var trail = document.createElement('div');
-  trail.style.position = 'fixed';
-  trail.style.width = '4px';
-  trail.style.height = '4px';
-  trail.style.background = 'radial-gradient(circle, #ffd966, transparent)';
-  trail.style.borderRadius = '50%';
-  trail.style.left = e.clientX + 'px';
-  trail.style.top = e.clientY + 'px';
-  trail.style.pointerEvents = 'none';
-  trail.style.zIndex = '9999';
-  trail.style.transition = 'all 0.5s ease-out';
-  document.body.appendChild(trail);
-  
-  cursorTrail.push(trail);
+function createFallingStar() {
+  var star = document.createElement('div');
+  star.innerHTML = '⭐';
+  star.style.position = 'fixed';
+  star.style.left = Math.random() * 100 + '%';
+  star.style.top = '-30px';
+  star.style.fontSize = Math.random() * 16 + 12 + 'px';
+  star.style.opacity = Math.random() * 0.6 + 0.4;
+  star.style.pointerEvents = 'none';
+  star.style.zIndex = '9997';
+  star.style.transition = 'all 3s linear';
+  star.style.filter = 'drop-shadow(0 0 4px #ffd966)';
+  document.body.appendChild(star);
   
   setTimeout(function() {
-    trail.style.opacity = '0';
-    trail.style.transform = 'scale(2)';
+    star.style.top = '100vh';
+    star.style.opacity = '0';
+    star.style.transform = 'rotate(180deg)';
   }, 10);
   
   setTimeout(function() {
-    trail.remove();
-  }, 500);
-  
-  if (cursorTrail.length > 20) {
-    cursorTrail.shift().remove();
-  }
-});
+    star.remove();
+  }, 3000);
+}
+
+setInterval(createFallingStar, 10000);
+
+for (var i = 0; i < 120; i++) {
+  var star = document.createElement('div');
+  star.classList.add('dynamic-star');
+  var size = Math.random() * 4 + 1;
+  star.style.width = size + 'px';
+  star.style.height = size + 'px';
+  star.style.left = Math.random() * 100 + '%';
+  star.style.top = Math.random() * 100 + '%';
+  star.style.animationDelay = Math.random() * 5 + 's';
+  star.style.animationDuration = (Math.random() * 4 + 2) + 's, ' + (Math.random() * 15 + 8) + 's';
+  document.body.appendChild(star);
+}
