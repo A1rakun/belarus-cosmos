@@ -341,10 +341,19 @@ html {
     font-size: 0.9rem;
   }
 button[onclick*="scrollTo"] {
-  z-index: 9999 !important;
+  position: fixed !important;
   bottom: 20px !important;
   right: 20px !important;
-  position: fixed !important;
+  z-index: 9999 !important;
+  background: linear-gradient(135deg, #ffd966, #ffaa33) !important;
+  border: none !important;
+  border-radius: 40px !important;
+  padding: 8px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  cursor: pointer !important;
+  font-weight: bold !important;
+  color: #1a1a2e !important;
 }
-
 
