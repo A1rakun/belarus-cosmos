@@ -324,6 +324,27 @@ html {
   main {
     padding: 4rem 0 1rem 0;
   }
+@media (max-width: 768px) {
+  .card-img {
+    height: 180px !important;
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+  
+  .card-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .card-content p {
+    font-size: 0.9rem;
+  }
+button[onclick*="scrollTo"] {
+  z-index: 9999 !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  position: fixed !important;
 }
 
 
