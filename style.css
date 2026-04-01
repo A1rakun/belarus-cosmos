@@ -371,4 +371,64 @@ html {
   font-weight: bold !important;
   color: #1a1a2e !important;
 }
+/* Фикс: чтобы меню не влияло на кнопку и звёзды */
+.nav-links.active ~ .to-top-btn,
+.nav-links.active + .to-top-btn,
+.nav-links.active ~ .dynamic-star,
+.nav-links.active + .dynamic-star,
+.nav-links.active ~ .galaxy-particle,
+.nav-links.active + .galaxy-particle,
+.nav-links.active ~ .timer-section,
+.nav-links.active + .timer-section {
+  transform: none !important;
+  position: fixed !important;
+  z-index: 10001 !important;
+}
+
+/* Кнопка наверх всегда на месте */
+.to-top-btn {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 10001 !important;
+  background: linear-gradient(135deg, #ffd966, #ffaa33) !important;
+  border: none !important;
+  border-radius: 40px !important;
+  padding: 8px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  cursor: pointer !important;
+  font-weight: bold !important;
+  color: #1a1a2e !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+  transition: all 0.3s !important;
+}
+
+/* Звёзды не должны двигаться */
+.dynamic-star {
+  position: fixed !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+}
+
+/* Таймер и викторина не должны сдвигаться */
+.timer-section,
+.quiz-section {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+@media (max-width: 768px) {
+  .to-top-btn {
+    bottom: 15px !important;
+    right: 15px !important;
+    padding: 6px 14px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .nav-links {
+    z-index: 10000 !important;
+  }
+}
 
