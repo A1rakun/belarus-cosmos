@@ -235,7 +235,7 @@ footer {
   font-size: 0.9rem;
   border-top: 1px solid rgba(255, 215, 0, 0.2);
 }
-  @keyframes fadeInUp {
+@keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -270,6 +270,41 @@ html {
   animation: starTwinkle 3s infinite alternate, starFloat 12s infinite ease-in-out;
 }
 
+/* ========== КНОПКА НАВЕРХ ========== */
+.to-top-btn {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 10001 !important;
+  background: linear-gradient(135deg, #ffd966, #ffaa33) !important;
+  border: none !important;
+  border-radius: 40px !important;
+  padding: 8px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  cursor: pointer !important;
+  font-weight: bold !important;
+  color: #1a1a2e !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+  transition: all 0.3s !important;
+}
+
+.to-top-btn:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4) !important;
+}
+
+/* Фикс для звёзд — чтобы не менялись при открытии меню */
+.dynamic-star,
+.galaxy-particle,
+.star,
+.meteor {
+  z-index: -1 !important;
+  pointer-events: none !important;
+}
+
+/* Мобильная версия */
 @media (max-width: 768px) {
   .burger {
     display: flex;
@@ -289,7 +324,7 @@ html {
     padding: 2rem 0;
     transition: 0.3s ease-in-out;
     gap: 1.8rem;
-    z-index: 999;
+    z-index: 10000 !important;
   }
   
   .nav-links.active {
@@ -324,35 +359,15 @@ html {
   main {
     padding: 4rem 0 1rem 0;
   }
-@media (max-width: 768px) {
-  .card-img {
-    height: 180px !important;
-  }
   
-  .card-content {
-    padding: 1rem;
+  .to-top-btn {
+    bottom: 15px !important;
+    right: 15px !important;
+    padding: 6px 14px !important;
+    font-size: 0.9rem !important;
+    z-index: 10001 !important;
   }
-  
-  .card-content h3 {
-    font-size: 1.2rem;
-  }
-  
-  .card-content p {
-    font-size: 0.9rem;
-  }
-button[onclick*="scrollTo"] {
-  position: fixed !important;
-  bottom: 20px !important;
-  right: 20px !important;
-  z-index: 9999 !important;
-  background: linear-gradient(135deg, #ffd966, #ffaa33) !important;
-  border: none !important;
-  border-radius: 40px !important;
-  padding: 8px 16px !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  cursor: pointer !important;
+};
   font-weight: bold !important;
   color: #1a1a2e !important;
 }
