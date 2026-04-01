@@ -325,4 +325,14 @@ html {
   animation: starTwinkle 3s infinite alternate, starFloat 12s infinite ease-in-out;
 }
 
+main {
+  padding-top: 5rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 4rem;
+  }
+}
+
 
