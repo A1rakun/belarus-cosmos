@@ -34,8 +34,26 @@
         <p>От первых космонавтов до современных спутников — Беларусь всегда была частью звёздной истории человечества</p>
       </section>
 
+		<script>
+(function() {
+  var text = "Космическая летопись Беларуси";
+  var i = 0;
+  var speed = 30;
+  var titleElement = document.getElementById('animatedTitle');
+  
+  function typeWriter() {
+    if (i < text.length) {
+      titleElement.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+  
+  typeWriter();
+})();
+</script>
+
       <section>
-        <h2 style="text-align: center; margin-bottom: 1.5rem;">Космическая летопись Беларуси</h2>
         <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem auto; font-size: 1.1rem; font-style: italic;">
           Здесь вы найдёте информацию о белорусских космонавтах, учёных и разработках, которые помогли человечеству выйти за пределы Земли.
         </p>
