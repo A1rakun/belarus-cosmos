@@ -100,7 +100,26 @@
         <p style="font-size: 1.2rem; font-style: italic; margin-bottom: 0.5rem;" id="quoteText">"Зямля такая маленькая і такая прыгожая. Беражыце яе!"</p>
         <p style="margin-top: 0.5rem; color: #ffd966;" id="quoteAuthor">— Пётр Климук, лётчик-космонавт</p>
         <p style="font-size: 0.8rem; margin-top: 0.8rem;">✨ Цитата обновляется каждый день ✨</p>
-      </div>
+      </div>		
+		<script>
+			var quotes = [
+  { text: '"Зямля такая маленькая і такая прыгожая. Беражыце яе!"', author: '— Пётр Климук, лётчик-космонавт' },
+  { text: '"Космос — это не только романтика, это огромный труд и ответственность"', author: '— Владимир Коваленок, дважды Герой СССР' },
+  { text: '"С космоса наша планета кажется хрупкой. Мы должны её беречь"', author: '— Олег Новицкий, Герой РФ' },
+  { text: '"Як я марыла — так і здарылася. Галоўнае — верыць у сябе!"', author: '— Марина Василевская, Герой Беларуси' },
+  { text: '"Космос — это не работа, это образ жизни и состояние души"', author: '— Георгий Гречко, дважды Герой СССР' },
+  { text: '"Выход в открытый космос — момент, когда понимаешь, насколько человек мал и одновременно велик"', author: '— Анатолий Арцебарский, Герой СССР' }
+];
+
+var today = new Date();
+var startOfYear = new Date(today.getFullYear(), 0, 0);
+var diff = today - startOfYear;
+var dayOfYear = Math.floor(diff / 86400000);
+var quoteIndex = dayOfYear % quotes.length;
+
+document.getElementById('quoteText').innerHTML = quotes[quoteIndex].text;
+document.getElementById('quoteAuthor').innerHTML = quotes[quoteIndex].author;
+		</script>		
 	  <div style="background: rgba(0,0,0,0.4); border-radius: 20px; padding: 1.5rem; margin: 1rem 0 0.5rem 0;">
   <h3 style="text-align: center; margin-bottom: 1rem;">🚀 Беларусь: взгляд в космическое будущее</h3>
   <div style="display: flex; flex-direction: column; gap: 1rem;">
