@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // ========== БУРГЕР-МЕНЮ ==========
   var burger = document.querySelector('.burger');
   var navLinks = document.querySelector('.nav-links');
   
@@ -23,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // ========== ЗВЁЗДЫ ==========
   var stars = [];
   for (var i = 0; i < 80; i++) {
     var star = document.createElement('div');
@@ -61,8 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     requestAnimationFrame(moveStars);
   }
   moveStars();
-  
-  // ========== ЧАСТИЦЫ ПРИ КЛИКЕ ==========
+
   document.addEventListener('click', function(e) {
     for (var i = 0; i < 6; i++) {
       var particle = document.createElement('div');
@@ -92,4 +89,23 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 500, particle);
     }
   });
+}
+
+var quotes = [
+  { text: '"Зямля такая маленькая і такая прыгожая. Беражыце яе!"', author: '— Пётр Климук, лётчик-космонавт' },
+  { text: '"Космос — это не только романтика, это огромный труд и ответственность"', author: '— Владимир Коваленок, дважды Герой СССР' },
+  { text: '"С космоса наша планета кажется хрупкой. Мы должны её беречь"', author: '— Олег Новицкий, Герой РФ' },
+  { text: '"Як я марыла — так і здарылася. Галоўнае — верыць у сябе!"', author: '— Марина Василевская, Герой Беларуси' },
+  { text: '"Космос — это не работа, это образ жизни и состояние души"', author: '— Георгий Гречко, дважды Герой СССР' },
+  { text: '"Выход в открытый космос — момент, когда понимаешь, насколько человек мал и одновременно велик"', author: '— Анатолий Арцебарский, Герой СССР' }
+];
+
+var today = new Date();
+var startOfYear = new Date(today.getFullYear(), 0, 0);
+var diff = today - startOfYear;
+var dayOfYear = Math.floor(diff / 86400000);
+var quoteIndex = dayOfYear % quotes.length;
+
+document.getElementById('quoteText').innerHTML = quotes[quoteIndex].text;
+document.getElementById('quoteAuthor').innerHTML = quotes[quoteIndex].author; 
 });
